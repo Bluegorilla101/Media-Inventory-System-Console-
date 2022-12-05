@@ -1,6 +1,15 @@
 #include <iostream>
+#include "MediaItem.h"
+#include "MediaInventory.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    MediaItem bigBoyItem("Big Boy", 1996);
+    MediaItem smallGirlItem("Small Girl", 1998);
+
+    MediaInventory mediaInventory;
+    mediaInventory.addMediaItem(bigBoyItem);
+    mediaInventory.addMediaItem(smallGirlItem);
+
+    std::cout << mediaInventory.toString() << "\n";
 }

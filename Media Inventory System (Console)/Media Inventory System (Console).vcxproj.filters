@@ -24,12 +24,18 @@
     <ClCompile Include="MediaItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FilmItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MediaInventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MediaItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FilmItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
