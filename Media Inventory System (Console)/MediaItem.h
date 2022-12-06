@@ -5,6 +5,7 @@
 class MediaItem
 {
 public:
+	MediaItem();
 	MediaItem(std::string title, int year);
 	std::string toString() const;
 

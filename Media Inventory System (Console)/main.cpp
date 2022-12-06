@@ -4,12 +4,20 @@
 
 int main()
 {
-    MediaItem bigBoyItem("Big Boy", 1996);
-    MediaItem smallGirlItem("Small Girl", 1998);
+	MediaItem bigBoyItem("Big Boy", 1996);
+	MediaItem smallGirlItem("Small Girl", 1998);
 
-    MediaInventory mediaInventory;
-    mediaInventory.addMediaItem(bigBoyItem);
-    mediaInventory.addMediaItem(smallGirlItem);
+	MediaInventory mediaInventory;
+	/*mediaInventory.addMediaItem(bigBoyItem);
+	mediaInventory.addMediaItem(smallGirlItem);*/
 
-    std::cout << mediaInventory.toString() << "\n";
+	std::cout << mediaInventory.toString() << "\n";
+
+	std::string line;
+
+	while (std::getline(std::cin, line))
+	{
+		mediaInventory.processUserInput(line);
+	}
 }
+
