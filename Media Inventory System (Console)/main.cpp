@@ -15,9 +15,16 @@ int main()
 
 	std::string line;
 
-	while (std::getline(std::cin, line))
+	try
 	{
-		mediaInventory.processUserInput(line);
+		while (std::getline(std::cin, line))
+		{
+			mediaInventory.processUserInput(line);
+		}
+	}
+	catch (std::exception& e)
+	{
+		return 1;
 	}
 }
 

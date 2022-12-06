@@ -3,6 +3,8 @@
 #include <vector>
 #include <list>
 #include "FilmItem.h"
+#include "BookItem.h"
+#include "AlbumItem.h"
 
 class MediaInventory
 {

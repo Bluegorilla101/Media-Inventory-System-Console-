@@ -27,6 +27,12 @@
     <ClCompile Include="FilmItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AlbumItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BookItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MediaInventory.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FilmItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlbumItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BookItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

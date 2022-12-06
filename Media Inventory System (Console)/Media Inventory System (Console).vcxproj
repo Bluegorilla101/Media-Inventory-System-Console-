@@ -140,12 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AlbumItem.cpp" />
+    <ClCompile Include="BookItem.cpp" />
     <ClCompile Include="FilmItem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MediaInventory.cpp" />
     <ClCompile Include="MediaItem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlbumItem.h" />
+    <ClInclude Include="BookItem.h" />
     <ClInclude Include="FilmItem.h" />
     <ClInclude Include="MediaInventory.h" />
     <ClInclude Include="MediaItem.h" />
