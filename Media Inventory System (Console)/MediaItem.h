@@ -7,7 +7,7 @@ class MediaItem
 public:
 	MediaItem();
 	MediaItem(std::string title, int year);
-	std::string toString() const;
+	virtual const std::string toString();
 
 protected:
 	std::string title;

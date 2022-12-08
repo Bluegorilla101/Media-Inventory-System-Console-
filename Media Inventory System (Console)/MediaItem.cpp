@@ -14,7 +14,7 @@ MediaItem::MediaItem(std::string title, int year)
 	this->numCopies = 1;
 }
 
-std::string MediaItem::toString() const
+const std::string MediaItem::toString()
 {
 	return std::format("{} ({}) [{} {}]", title, year, numCopies, (numCopies == 1) ? "copy" : "copies");
 }

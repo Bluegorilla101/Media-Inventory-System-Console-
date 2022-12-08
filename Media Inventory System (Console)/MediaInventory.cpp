@@ -8,7 +8,7 @@ MediaInventory::MediaInventory()
 {
 }
 
-void MediaInventory::addMediaItem(MediaItem mediaItem)
+void MediaInventory::addMediaItem(MediaItem* mediaItem)
 {
 	inventory.push_back(mediaItem);
 }
@@ -16,9 +16,9 @@ std::string MediaInventory::toString()
 {
 	std::string out;
 
-	for (const auto& mediaItem : inventory)
+	for (const auto mediaItem : inventory)
 	{
-		out += mediaItem.toString() + "\n";
+		out += mediaItem->toString() + "\n";
 	}
 
 	return out;
@@ -39,10 +39,7 @@ void MediaInventory::processUserInput(const std::string &input)
 		}
 		else if (tokens[0] == "list")
 		{
-			for (auto& mediaItem : inventory)
-			{
-				std::cout << mediaItem.toString() << "\n";
-			}
+			std::cout << toString();
 			validInput = true;
 		}
 		else if (tokens[0] == "exit")
@@ -56,7 +53,7 @@ void MediaInventory::processUserInput(const std::string &input)
 		{
 			if (tokens[1] == "film" || tokens[1] == "album" || tokens[1] == "book")
 			{
-				MediaItem mediaItem = promptUserMediaItem(tokens[1]);
+				MediaItem* mediaItem = promptUserMediaItem(tokens[1]);
 				addMediaItem(mediaItem);
 				std::cout << "Media added\n";
 				validInput = true;
@@ -79,7 +76,7 @@ void MediaInventory::tokenizeInput(const std::string &input, std::vector<std::st
 	}
 }
 
-MediaItem MediaInventory::promptUserMediaItem(const std::string& mediaType)
+MediaItem* MediaInventory::promptUserMediaItem(const std::string& mediaType)
 {
 	if (mediaType == "film")
 	{
@@ -102,7 +99,7 @@ MediaItem MediaInventory::promptUserMediaItem(const std::string& mediaType)
 		std::getline(std::cin, filmFormat);
 
 
-		FilmItem filmItem(title, director, year, filmFormat);
+		FilmItem* filmItem = new FilmItem(title, director, year, filmFormat);
 		return filmItem;
 
 	}
@@ -126,8 +123,8 @@ MediaItem MediaInventory::promptUserMediaItem(const std::string& mediaType)
 		std::string label;
 		std::getline(std::cin, label);
 
-
-		AlbumItem albumItem(title, artist, year, label);
+		// TODO free memory when done
+		AlbumItem* albumItem = new AlbumItem(title, artist, year, label);
 		return albumItem;
 	}
 	else if (mediaType == "book")
@@ -151,7 +148,7 @@ MediaItem MediaInventory::promptUserMediaItem(const std::string& mediaType)
 		std::getline(std::cin, publisher);
 
 
-		BookItem bookItem(title, author, year, publisher);
+		BookItem* bookItem = new BookItem(title, author, year, publisher);
 		return bookItem;
 	}
 	else

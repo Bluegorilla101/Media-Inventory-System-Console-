@@ -7,8 +7,9 @@ class FilmItem :
 public:
     FilmItem(std::string title, std::string director, int year, std::string filmFormat)
         : MediaItem(title, year), director(director), filmFormat(filmFormat) {}
+    const std::string toString() override;
 private:
-    std::string filmFormat;
     std::string director;
+    std::string filmFormat;
 };
 
